@@ -1,7 +1,4 @@
-let chai = require('chai');
 let assert = chai.assert;
-
-let { addClass } = require('../js/className.js');
 
 describe('addClass', function() {
   it('should add class to element', function() {
