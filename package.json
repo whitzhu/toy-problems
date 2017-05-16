@@ -1,0 +1,26 @@
+{
+  "name": "toy-problems",
+  "version": "1.0.0",
+  "description": "toy problem practice",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whitzhu/toy-problems.git"
+  },
+  "author": "Whitney Zhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whitzhu/toy-problems/issues"
+  },
+  "homepage": "https://github.com/whitzhu/toy-problems#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.4.1"
+  }
+}
