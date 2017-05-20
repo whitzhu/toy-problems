@@ -32,9 +32,3 @@ const leftRotation = function(array, n) {
   return [].concat(array,move).join(' ');
 }
 
-const arr = [1, 2, 3, 4, 5];
-const n = 4;
-
-console.log(leftRotation(arr, n));
-
-
