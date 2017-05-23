@@ -47,6 +47,55 @@ describe('stack', function() {
     stack.pop();
     expect(stack.pop()).to.equal('b');
   })
+})
+
+describe('queue', function() {
+  let queue = new Queue();
+
+  it('should report a size of zero for a new queue', function() {
+    expect(queue.size()).to.equal(0);
+  })  
 
 
+  it('should report a size of 1 after adding two items and removing one', function() {
+    queue.enqueue('hello');
+    queue.enqueue('world');
+    queue.dequeue();
+    expect(queue.size()).to.equal(1);
+    queue.dequeue(); //empty queue
+  })
+
+  it('does not error when removing from an empty queue', function() {
+    expect(function() { queue.dequeue();}).not.throws();
+  })  
+
+  it('should report a size of 0 after removing more items than were added', function() {
+    queue.enqueue('a');
+    queue.dequeue();
+    queue.dequeue();
+    expect(queue.size()).to.equal(0);
+  })
+
+  it('should allow sequentially adding and removing items', function() {
+    queue.enqueue('a');
+    expect(queue.dequeue()).to.equal('a');
+    queue.enqueue('b');
+    expect(queue.dequeue()).to.equal('b');
+  })
+
+  it('should remove the least recently added of two items', function() {
+    queue.enqueue('a');
+    queue.enqueue('b');
+    expect(queue.dequeue()).to.equal('a');
+    queue.dequeue(); //empty queue
+  })
+
+  it('should remove the oldest item, after newer items have already been added and removed', function() {
+    console.log('=====');
+    queue.enqueue('a');
+    queue.enqueue('b');
+    queue.dequeue();
+    queue.enqueue('c');
+    expect(queue.dequeue()).to.equal('b');
+  })
 })
