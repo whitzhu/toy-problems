@@ -1,4 +1,5 @@
 const assert = chai.assert;
+const expect = chai.expect;
 
 describe('Arrays', function() {
   describe('Arrays: Left Rotation', function() {
@@ -31,6 +32,22 @@ describe('Strings', function() {
       const b = 'abc';
       let answer = makingAnagrams(a,b);
       assert.equal(answer, 4);
+    })
+  })
+})
+
+describe('Hash Table', function() {
+  describe('Ransom Note', function() {
+    it('Print Yes if he can use the magazine to create an untraceable replica of his ransom note', function() {
+      const a = [ 'give', 'me', 'one', 'grand', 'today', 'night', 'apple' ];
+      const b = [ 'give', 'one',  'apple', 'grand', 'today'];
+      expect(ransomNote(7,5,a,b)).to.equal('Yes');
+    })
+
+    it('Print No if he can"t use the magazine to create an untraceable replica of his ransom note', function() {
+      const a = [ 'give', 'me', 'one', 'grand', 'today', 'night', 'apple' ];
+      const b = [ 'give', 'one',  'apple', 'grand', 'bye'];
+      expect(ransomNote(7,5,a,b)).to.equal('No');
     })
   })
 })
