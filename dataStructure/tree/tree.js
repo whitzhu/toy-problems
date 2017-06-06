@@ -26,7 +26,6 @@ Tree.prototype.BFTraversal = function(callback) {
 Tree.prototype.contains = function(target, traversal) {
   let contain = false;
   traversal.call(this, node => {
-    console.log('node is', node.val);
     if (node.val === target) {
       contain = true;
       return true;
@@ -34,20 +33,3 @@ Tree.prototype.contains = function(target, traversal) {
   });
   return contain;
 }
-
-const tree = new Tree(1);
-
-tree._root.children.push(new Node(2));
-tree._root.children.push(new Node(3));
-tree._root.children[0].children.push(new Node(4));
-tree._root.children[0].children.push(new Node(5));
-tree._root.children[0].children[0].children.push(new Node(6));
-tree._root.children[0].children[0].children.push(new Node(7));
-tree._root.children[0].children[1].children.push(new Node(8));
-
-// tree.DFTraversal( node => console.log('val is ', node.val));
-// tree.BFTraversal( node => console.log('val is ', node.val));
-// tree.contains(9, Tree.prototype.BFTraversal );
-
-
-
