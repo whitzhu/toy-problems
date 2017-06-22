@@ -1,8 +1,9 @@
 const mergeSort = function(list) {  
+  let mid = Math.floor(list.length/2);
   if (list.length < 2) return list;
   
-  let left = list.slice(0, list.length / 2); 
-  let right = list.slice(list.length / 2);   
+  let left = list.slice(0, mid); 
+  let right = list.slice(mid / 2);   
 
   left = mergeSort(left);
   right = mergeSort(right);
